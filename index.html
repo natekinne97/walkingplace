@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="Pop Finder" content="Find the population of any U.S city.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Park Finder</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="intro">
+            <h1>Looking for a great place to walk?</h1>
+            <h2>Change up your routine and find a new place to walk.</h2>
+            <h3>Give it a try!</h3>
+        </div>
+    <form>
+        <label>
+            Put in your location
+            <input id="term" placeholder="city, state">
+        </label>
+        
+    </form>
+    
+    <div id="map"></div>
+
+    <main>
+        <!-- results will be displayed in text form with picture  -->
+        <!-- name and possibly a link -->
+        <section class="results hidden">
+            <div class="container"></div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFjPlUnZpoYF-351A92HCVFhKEGwQDeLg&libraries=places"></script>
+    <script src="code.js"></script>
+        
+    </body>
+</html>
