@@ -2,7 +2,7 @@
  /* element that contains the map. */
 #map {
   height: 50%;
-  width: 50%;
+  width: 70%;
   display: block;
   margin: 0 auto;
 }
@@ -11,6 +11,10 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: serif;
+  background: url('https://i.imgur.com/ADR5N8j.png') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
 }
 #description {
   font-family: Roboto;
@@ -27,9 +31,26 @@ html, body {
   display: inline;
 }
 
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 /* Non map related */
+
 .intro{
   text-align: center;
+  
+}
+
+.text{
+  text-align: center;
+  color: black;
+  font-weight: 900;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 /* form position */
@@ -44,10 +65,33 @@ input{
   font-size: 30px;
 }
 
+/* all results */
 .results{
-  width: 50%;
-  height: 50px;
-  border: 1px solid black;
+  width: 80%;
+  height: 400px;
+  overflow: scroll;
+  /* border: 1px solid black; */
   display: block;
   margin: 0 auto;
+
+  background-color: white;
+}
+
+.result{
+  /* border-bottom: 1px solid black;
+  border-top: 1px solid black; */
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.result-img{
+  width: 200px;
+  height: 200px;
+  padding: 1%;
+}
+
+.hidden{
+  display: none;
 }
