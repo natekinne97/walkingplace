@@ -157,7 +157,7 @@ function displayWeather(response){
     console.log(data.weather.description);
     $('.weather-description').text(`${data.weather.description}`);
     console.log(data.uv);
-    $('.uv-index').text(`${data.uv}`);
+    $('.uv-index').text(`${Math.floor(data.uv)}`);
     console.log(suggestion);
     // sunscreen reccomendations
     $('.sunscreen').text(`${suggestion}`);
@@ -165,8 +165,9 @@ function displayWeather(response){
 }
 
 // convert the temperature to imperial
-function convertTemp(celsius){   
-    return (celsius * 9 / 5) + 32;;
+function convertTemp(celsius){ 
+    let temp = Math.floor(Math.round(celsius));  
+    return (temp * 9 / 5) + 32;
 }
 
 // sunscreen reccomendations
@@ -209,7 +210,6 @@ function watchForm(){
         initialize(term);
     });
 }
-
 
 // prepare page for search results
 // This will be animated in the future
