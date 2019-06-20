@@ -2,9 +2,10 @@
  /* element that contains the map. */
 #map {
   height: 50%;
-  width: 70%;
+  width: 80%;
   display: block;
   margin: 0 auto;
+  margin-bottom: 2%;
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
@@ -12,9 +13,9 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: serif;
-  background: url('https://i.imgur.com/ADR5N8j.png') no-repeat center center fixed;
+  /* background: url('https://i.imgur.com/ADR5N8j.png') no-repeat center center fixed; */
+  background: url('pics/trail.jpg') no-repeat center center fixed;
   background-size: cover;
-  overflow: hidden;
 }
 #description {
   font-family: Roboto;
@@ -31,14 +32,9 @@ html, body {
   display: inline;
 }
 
-main{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
+
 
 /* Non map related */
-
 .intro{
   text-align: center;
   
@@ -53,6 +49,10 @@ main{
   -webkit-text-stroke-color: black;
 }
 
+/* change background to new color */
+.bg{
+  background-color: rgb(255, 255, 255, 0.7);
+}
 /* form position */
 form{
 
@@ -65,16 +65,31 @@ input{
   font-size: 30px;
 }
 
+/* weather */
+.weather{
+  /* background-color: white; */
+  width: 75%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+
+.weather-container{
+  display: flex;
+  flex-direction: column;
+}
+
 /* all results */
 .results{
-  width: 80%;
+  width: 70%;
   height: 400px;
   overflow: scroll;
   /* border: 1px solid black; */
   display: block;
   margin: 0 auto;
 
-  background-color: white;
+  /* background-color: white; */
 }
 
 .result{
@@ -94,4 +109,10 @@ input{
 
 .hidden{
   display: none;
+}
+
+@media screen and (min-width: 768px){
+  .weather-container{
+    flex-direction: row;
+  }
 }
