@@ -178,16 +178,17 @@ function sunscreen(uvData){
         'Be sure to put on plenty of sunscreen and wear a hat.',
         'If you dont want to put on lots of sunscreen I would wait to take a walk until after 7p.m'
     ];
+    let data = Math.floor(uvData);
 
-    if(uvData === 0){
+    if(data === 0){
         return suggestion[0];
-    } else if (uvData <= 3  && uvData >0){
+    } else if (data <= 3  && data >0){
         return suggestion[1]
-    }else if(uvData >=4 && uvData <= 6){
+    }else if(data >=4 && data <= 6){
         return suggestion[2]
-    }else if(uvData >= 5 && uvData <=7){
+    }else if(data >= 5 && data <=7){
         return suggestion[3];
-    }else if(uvData >=8){
+    }else if(data >=8){
         return suggestion[4];
     }
 }
