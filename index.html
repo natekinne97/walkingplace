@@ -9,29 +9,50 @@
         <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- font awesome for the search icon -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+            integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
     </head>
     <body>
-        <div class="intro">
+        <div class="text">
             <h1>Looking for a great place to walk?</h1>
             <h2>Change up your routine and find a new place to walk.</h2>
             <h3>Give it a try!</h3>
         </div>
     <form>
-        <label>
-            Put in your location
-            <input id="term" placeholder="city, state">
-        </label>
-        
+        <fieldset>
+            <input id="term" placeholder="city, state" required>  
+            <!-- <input type="submit" placeholder="submit">   -->
+            <button type="submit">
+                <i class="fas fa-hiking"></i>
+            </button>
+        </fieldset>
     </form>
-    
-    <div id="map"></div>
 
+    <p class="text">Just a 30 minute walk a day can help lower blood pressure, and relieve stress.</p>
+
+    
+    <!-- error when map is moved to a container -->
+    <div id="map"></div>
     <main>
+        
+
         <!-- results will be displayed in text form with picture  -->
         <!-- name and possibly a link -->
-        <section class="results hidden">
-            <div class="container"></div>
+        <section class="results bg hidden">
+            <h2>Results:</h2>
         </section>
+      
+        <div class="weather bg hidden">
+            <p>Current Weather</p>
+            <div class="weather-container">
+                <p><span class="temperature"></span> Fahrenheit</p>
+                <p><span class="weather-description"></span></p>
+                <p>UV index: <span class="uv-index"></span></p>
+                <p class="sunscreen"></p>
+            </div>
+        </div>
+
     </main>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFjPlUnZpoYF-351A92HCVFhKEGwQDeLg&libraries=places"></script>
