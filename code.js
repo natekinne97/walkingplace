@@ -147,26 +147,20 @@ function getWeather(lat, lng){
 
 // displays weather in the DOM
 function displayWeather(response){
-    console.log(response);
     let data = response.data[0];
     let temperature = convertTemp(data.temp);
     // get sunscreen reccomendations
     let suggestion = sunscreen(data.uv);
-    console.log(data.temp);
     $('.temperature').text(`${temperature}`);
-    console.log(data.weather.description);
     $('.weather-description').text(`${data.weather.description}`);
-    console.log(data.uv);
     $('.uv-index').text(`${Math.floor(data.uv)}`);
-    console.log(suggestion);
     // sunscreen reccomendations
     $('.sunscreen').text(`${suggestion}`);
-    console.log(temperature);
 }
 
 // convert the temperature to imperial
 function convertTemp(celsius){ 
-    let temp = Math.floor(Math.round(celsius));  
+    let temp = Math.round(Math.floor(celsius));  
     return (temp * 9 / 5) + 32;
 }
 
@@ -205,7 +199,6 @@ function watchForm(){
         $('.result').remove();
         // get search term
         let term = $("#term").val();
-        console.log(term);
         // displays map and initializes
         initialize(term);
     });
