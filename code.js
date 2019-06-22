@@ -20,11 +20,11 @@ function initialize(term) {
             // display to map
             findPlace(results);
         } else {
-            alert('Geocode was not successful for the following reason: ' + status);
+           $('.google-error').removeClass('hidden'); 
         }
     });
-
 }
+
 
 // callback takes info from search. 
 // when a location is entered it displays the list of places i.e parks resteraunts
@@ -141,8 +141,7 @@ function getWeather(lat, lng){
     fetch(`https://api.weatherbit.io/v2.0/current?&lat=${lat}&lon=${lng}&key=df10f63a96934282a5e65dde3bec6c8e`)
         .then(response => response.json())
         .then(responseJson => displayWeather(responseJson))
-        .catch(error => alert("Weather Api Error. Please try again later"));
-
+        .catch(error => $('.weather-error').removeClass('hidden'));
 }
 
 // displays weather in the DOM
@@ -208,6 +207,7 @@ function watchForm(){
 // This will be animated in the future
 function prepPage(){
     $('.text').addClass('hidden');
+    $('.error').addClass('hidden');
     $('.results').removeClass('hidden');
     $('.weather').removeClass('hidden');
 }

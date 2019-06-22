@@ -16,12 +16,13 @@
     <body>
         <div class="text">
             <h1>Looking for a great place to walk?</h1>
-            <h2>Change up your routine and find a new place to walk.</h2>
-            <h3>Give it a try!</h3>
+            <h2 >Change up your routine and find a new place to walk.</h2>
+            <h2 class="ptext give">Give it a try!</h2>
         </div>
+        <p class="error google-error hidden">Cannot find place. Please try a different term.</p>
+        <p class="error weather-error hidden">Cannot find weather data.</p>
     <form>
         <fieldset>
-            
             <input id="term" placeholder="city, state" required>
                 <!-- <input type="submit" placeholder="submit">   -->
             <button type="submit">
@@ -31,7 +32,7 @@
         </fieldset>
     </form>
 
-    <p class="text">Just a 30 minute walk a day can help lower blood pressure, and relieve stress.</p>
+    <h1 class="text ptext">Just a 30 minute walk a day can help lower blood pressure, and relieve stress.</h1>
 
     
     <!-- error when map is moved to a container -->
@@ -47,7 +48,7 @@
       
         <section>
             <div class="weather bg hidden">
-                <p>Current Weather</p>
+                <h2 class="current">Current Weather</h2>
                 <div class="weather-container">
                     <p><span class="temperature"></span> Fahrenheit</p>
                     <p><span class="weather-description"></span></p>
@@ -61,6 +62,7 @@
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFjPlUnZpoYF-351A92HCVFhKEGwQDeLg&libraries=places"></script>
     <script src="code.js"></script>
-        
+    <script src="google.js"></script>
+    <script src="weather.js"></script>
     </body>
 </html>
