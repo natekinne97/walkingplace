@@ -110,7 +110,7 @@ function parks(place) {
         $('.results').append(`
         <div class="result" id="${park.id}">
             <img class="result-img" src="${picSrc}" alt="${park.name}">
-            <a class="name">${park.name}</a>
+            <p class="name">${park.name}</p>
         </div>
        `);
     });
