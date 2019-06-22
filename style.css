@@ -89,7 +89,7 @@ input{
 }
 /* current weather text */
 .current{
-  text-align: left;
+  text-align: center;
 }
 
 /* all results */
@@ -161,4 +161,14 @@ input{
   }
   
 
+}
+
+@media screen and (min-width: 1550px){
+  .results{
+    margin-top: -28%;
+  }
+
+  .weather{
+    margin-top: 30%;
+  }
 }
