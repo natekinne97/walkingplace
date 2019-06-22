@@ -12,9 +12,11 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: serif;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: black;
   background: url('pics/trail.jpg') no-repeat center center fixed;
   background-size: cover;
+ 
 }
 #description {
   font-family: Roboto;
@@ -47,6 +49,11 @@ html, body {
   -webkit-text-stroke-color: black;
 }
 
+.ptext{
+  font-size: 40px;
+  font-weight: 900;
+}
+
 /* change background to new color */
 .bg{
   background-color: rgb(255, 255, 255, 0.7);
@@ -56,6 +63,7 @@ form{
  display: flex;
  flex-direction: row;
  justify-content: center;
+ margin-bottom: 2%;
 }
 
 input{
@@ -79,17 +87,18 @@ input{
   display: flex;
   flex-direction: column;
 }
+/* current weather text */
+.current{
+  text-align: left;
+}
 
 /* all results */
 .results{
   width: 80%;
   height: 400px;
   overflow: scroll;
-  /* border: 1px solid black; */
   display: block;
   margin: 0 auto;
-
-  /* background-color: white; */
 }
 
 .result{
@@ -112,6 +121,12 @@ input{
   margin-top: 10%;
 }
 
+.error{
+  text-align: center;
+  color: red;
+  font-weight: bolder;
+}
+
 .hidden{
   display: none;
 }
@@ -123,3 +138,27 @@ input{
   }
 }
 
+@media screen and (min-width: 1024px){
+  #map{
+    width: 48%;
+    float: left;
+    margin-left: 1%;
+  }
+  .results{
+    width: 48%;
+    height: 430px;
+    float: right;
+    margin-top: -35%;
+    margin-right: 1%;
+  }
+  .weather{
+    height: 250px;
+    margin-top: 38%;
+  }
+
+  .weather p:first{
+    text-align: center;
+  }
+  
+
+}
