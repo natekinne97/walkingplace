@@ -14,11 +14,17 @@ function getWeather(lat, lng) {
 
 // displays weather in the DOM
 function displayWeather(response) {
+    // data.weather.icon
     let data = response.data[0];
+    // icon src
+    let iconSrc = `pics/weatherIcons/icons/${data.weather.icon}.png`;
     let temperature = convertTemp(data.temp);
     // get sunscreen reccomendations
     let suggestion = sunscreen(data.uv);
     $('.temperature').text(`${temperature}`);
+    // weather icons
+    $('.weather-icon').attr('src', `${iconSrc}`);
+    $('.weather-icon').attr('alt', `${iconSrc}`);
     $('.weather-description').text(`${data.weather.description}`);
     $('.uv-index').text(`${Math.floor(data.uv)}`);
     // sunscreen reccomendations
