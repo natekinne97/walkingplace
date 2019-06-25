@@ -23,7 +23,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: sans-serif;
   background-color: black;
   background: url('pics/trail.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -83,6 +83,12 @@ input{
   color: black;
   font-size: 30px;
   background-color: rgb(255, 255, 255, 0.7);
+}
+
+.fa, .fas{
+  font-weight: 900;
+  height: 30px;
+  margin-top: 4px;
 }
 
 main{
@@ -157,10 +163,35 @@ main{
   display: none;
 }
 
+.brand{
+  width: 55%;
+  height: 12%;
+  background-color: rgb(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.personal-logo{
+  width: 91%;
+  height: auto;
+}
+
 @media screen and (min-width: 768px){
   .weather-container{
     flex-direction: row;
     justify-content: space-evenly;
+  }
+
+  .brand{
+    width: 26%;
+    justify-content: space-around;
+  }
+  .brand p{
+    margin: 2%;
+  }
+  .personal-logo{
+    width: 74%;
   }
 }
 
@@ -190,7 +221,7 @@ main{
   }
   .weather{
     height: 250px;
-    width: 80%;
+    width: 90%;
   }
 
   .weather p:first{
@@ -199,6 +230,7 @@ main{
   
   .weather-icon{
     width: auto;
+    height: auto;
   }
 
   .hidden{
