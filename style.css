@@ -5,12 +5,19 @@
  /* Always set the map height explicitly to define the size of the div
  /* element that contains the map. */
 #map {
-  height: 50%;
-  width: 80%;
-  display: block;
-  margin: 0 auto;
+  height: 100%;
+  width: 100%;
   /* margin-bottom: 5%; */
 }
+
+.map-container{
+  width: 80%;
+  height: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
@@ -97,6 +104,11 @@ main{
   display: flex;
   flex-direction: column;
 }
+
+.weather-icon{
+  width: -webkit-fill-available;
+}
+
 /* current weather text */
 .current{
   text-align: center;
@@ -116,6 +128,7 @@ main{
   /* border-bottom: 1px solid black;
   border-top: 1px solid black; */
   text-align: center;
+  position: relative;
   margin-bottom: 2%;
   display: flex;
   flex-direction: row;
@@ -153,15 +166,27 @@ main{
 
 @media screen and (min-width: 1024px){
   #map{
-    width: 48%;
-    float: left;
+    width: 100%;
+    height: 100%;
     margin-left: 1%;
   }
+  .map-container{
+   height: 50%;
+   width: 50%;
+   margin: 0;
+  }
   .results{
-    width: 97%;
     height: 430px;
-    float: right;
-    margin-right: 1%;
+    width: 45%;
+    position: absolute;
+    top: 17%;
+    left: 54%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    
+    margin-left: 0;
+    margin-right: 3%;
   }
   .weather{
     height: 250px;
@@ -172,6 +197,13 @@ main{
     text-align: center;
   }
   
+  .weather-icon{
+    width: auto;
+  }
+
+  .hidden{
+    display: none;  
+  }
 
 }
 
