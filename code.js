@@ -23,6 +23,14 @@ function prepPage(){
     $('.weather').removeClass('hidden');
 }
 
+// Animate the scroll
+jQuery.fn.scrollTo = function (elem, speed) {
+    $(this).animate({
+        scrollTop: $(this).scrollTop() - $(this).offset().top + $(elem).offset().top
+    }, speed == undefined ? 1000 : speed);
+    return this;
+};
+
 (function(){
   
   watchForm();

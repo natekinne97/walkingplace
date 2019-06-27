@@ -80,10 +80,16 @@ form{
 
 input{
   width: 80%;
+  margin-top: 1%;
+  margin-left: 4%; 
   color: black;
   font-size: 30px;
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgb(255, 255, 255, 0.6);
+  border: none;
+  border-bottom: 2px solid black;
 }
+
+
 
 .fa, .fas{
   font-weight: 900;

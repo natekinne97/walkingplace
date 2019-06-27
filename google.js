@@ -92,6 +92,7 @@ function createMarker(place) {
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.setContent(place.name);
         infowindow.open(map, this);
+        findElement(place.name);
     });
     return marker;
 }
@@ -105,10 +106,15 @@ function parks(place) {
         if (!park.photos) {
             console.log("No pictures");
             return
+        }else if(!park.id){
+            console.log(park.name, 'has no id');
         }
+        // remove whitespace to more easily search the name and highlight result
+        let name = park.name.replace(/\s/g, '');
+        
         let picSrc = park.photos[0].getUrl();
         $('.results').append(`
-        <div class="result" id="${park.id}">
+        <div class="result ${park.id}" id="${name}">
             <img class="result-img" src="${picSrc}" alt="${park.name}">
             <p class="name">${park.name}</p>
         </div>
@@ -120,10 +126,13 @@ function parks(place) {
 // checks if the result div is clicked. then opens the info window on the map
 function watchParks(park) {
     $(document).on('click', '.result', function () {
+        // get id from clicked div
         let divId = this.id;
+        // find the marker from the id
         park.forEach(function (place) {
-            let parkId = place.id;
+            let parkId = place.name.replace(/\s/g, '');
             if (parkId === divId) {
+                // open marker from id
                 infowindow.setContent(place.name);
                 infowindow.open(map, place.marker);
             }
@@ -131,3 +140,17 @@ function watchParks(park) {
     });
 }
 
+// find the selected marker and show the place in results
+function findElement(place) {
+    
+    // get list of result id
+    $('.result').map(function(){
+        // get id of all results
+        let id = this.id;
+        // remove space from place name
+        let name = place.replace(/\s/g, '');
+        if(id === name){            
+            $('.results').scrollTo(`#${id}`, 500);
+        }
+    });
+}
